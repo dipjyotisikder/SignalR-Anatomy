@@ -46,6 +46,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseRouting();
+
 app.UseCors(builder => builder
     .SetIsOriginAllowed(_ => true)
     .AllowAnyMethod()
@@ -54,6 +55,7 @@ app.UseCors(builder => builder
 
 app.UseAuthorization();
 
+app.UseWebSockets();
 app.MapControllers();
 
 app.Run();

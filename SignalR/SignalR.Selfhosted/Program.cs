@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SignalR.Common;
-using SignalR.Selfhosted.Hubs;
+using SignalR.Selfhosted.Notification;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +36,7 @@ app.UseCors(builder => builder
 
 app.UseRouting();
 
+app.UseWebSockets();
 app.MapControllers();
 
 app.MapHub<NotificationHub>(Constants.HubEndpoint);
