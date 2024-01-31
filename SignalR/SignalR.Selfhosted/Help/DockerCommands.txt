@@ -1,0 +1,5 @@
+﻿BUILD AN IMAGE:
+sudo docker build -t signalr -f ./SignalR.Selfhosted/Dockerfile .
+
+RUN A CONTAINER:
+sudo docker run -p 8000:80 --rm signalr
